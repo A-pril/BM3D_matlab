@@ -29,7 +29,7 @@ for i = 1:heightTimes+2
         %Aggregation：此时，每个二维块都是对去噪图像的估计。
         % 这一步分别将这些块融合到原来的位置，每个像素的灰度值通过每个对应位置的块的值加权平均，
         % 权重取决于置0的个数和噪声强度。
-        [OriImg,Weight]=Aggregation(OriImg,Weight,similar_blocks,positions,CNT0,CNT,block_size,beita,sigma);
+        [OriImg,Weight] = Aggregation(OriImg,Weight,similar_blocks,positions,CNT0,CNT,block_size,beita,sigma);
     end
 end
 OriImg(:,:) = OriImg(:,:) ./Weight(:,:);

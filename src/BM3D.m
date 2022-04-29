@@ -14,11 +14,11 @@ hardThreshold2 = 400/256;     %最终变换时组合块的阈值
 beita = 2;                %kaiser窗的参数
 
 basicImg = OriginalEstimate(img,ReferencePix,ReferenceNum,stepPix,NeighbourPix, ...
-    hardThreshold,sigma3d,beita); %获得初步估计的图像
-imwrite(basicImg,'lena初步变换1.bmp');
+   hardThreshold,sigma3d,beita); %获得初步估计的图像
+imwrite(basicImg,'lena初步变换.bmp');
 
-%basicImg = imread('lena初步变换.bmp');
-basicImg = im2double(basicImg);
+basicImg = im2double(imread("lena初步变换.bmp"));
+%basicImg = im2double(basicImg);
 finalImg = FinalEstimate(basicImg,img,ReferencePix2,ReferenceNum2,stepPix,NeighbourPix, ...
     hardThreshold2,sigma3d,beita);%获得最终图像
 
